@@ -1,3 +1,4 @@
+import sys
 import random
 
 articles = ['the', 'a', 'an']
@@ -5,8 +6,15 @@ nouns = ['cat', 'dog', 'man', 'women', 'child']
 verbs = ['sang', 'ran', 'jumped']
 adverbs = ['loudly', 'quietly', 'well', 'badly']
 
+if sys.argv[1]:
+    if int(sys.argv[1]) <= 10 and int(sys.argv[1]) >= 1:
+        stringsamount = int(sys.argv[1])
+    else:
+        stringsamount = 5
+else:
+    stringsamount = 5
 
-for number in range(10):
+for number in range(stringsamount):
     article = random.choice(articles)
     noun = random.choice(nouns)
     verb = random.choice(verbs)
